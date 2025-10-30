@@ -92,4 +92,15 @@ layout(xaxis = list(title = "Cuisine"),
 yaxis = list(title = "Number of inspections"))
 ```
 
+#render
+```{r}
+rmarkdown::render(
+  "nyc_inspection_dashboard.Rmd",
+  output_format = "flexdashboard::flex_dashboard",
+  output_file   = "nyc_inspection_dashboard.html",
+  output_dir    = "."
+)
+
+```
+
 
