@@ -7,30 +7,89 @@ output: html_document
 library(flexdashboard)
 library(tidyverse)
 library(p8105.datasets)
-
 library(plotly)
 ```
-
-Column {data-width=650}
------------------------------------------------------------------------
-
-### Chart A
-
+load dataset and start making plots
 ```{r}
+data(rest_inspec)
 
+ri <-
+  rest_inspec |>
+  mutate(
+    score = suppressWarnings(as.numeric(score)),
+    long  = as.numeric(longitude),
+    lat   = as.numeric(latitude)
+  ) |>
+  # ename cuisine_description to cuisine
+  rename(cuisine = cuisine_description) |>
+  select(
+    camis, dba, boro, cuisine, grade, score, lat, long, inspection_date
+  ) |>
+  filter(
+    !is.na(score),
+    !is.na(long), !is.na(lat),
+    long < -70, long > -75,   # keep within NYC bounds
+    lat  > 40, lat  < 41,
+    boro == "Manhattan",
+    score >= 0, score <= 40
+  )
+
+top_cuisines <- ri |>
+  count(cuisine, sort = TRUE) |>
+  slice_head(n = 12) |>
+  pull(cuisine)
+
+ri_small <- ri |> filter(cuisine %in% top_cuisines)
 ```
-
-Column {data-width=350}
------------------------------------------------------------------------
-
-### Chart B
-
+Plotly scatterplot: 
+Scatterplot of restaurant locations and inspection scores
 ```{r}
-
+ri_small |>
+mutate(text_label = str_c(
+dba, " — ", cuisine,
+"\nScore: ", score,
+ifelse(!is.na(grade), str_c(" (Grade ", grade, ")"), ""),
+"\nBorough: ", boro
+)) |>
+plot_ly(
+x = ~long, y = ~lat, type = "scatter", mode = "markers",
+color = ~score, colors = "viridis",
+text = ~text_label, alpha = 0.6
+) |>
+layout(xaxis = list(title = "longitude"),
+yaxis = list(title = "latitude"))
 ```
+This scatterplot displays the spatial distribution of restaurant inspections in Manhattan.
+Each point is an individual inspection, with color showing the inspection score (lower = better).
+The points trace the Manhattan street grid, confirming correct filtering.
+Colors appear evenly mixed across the map — suggesting no clear geographic clustering of better or worse scores.
+Cleanliness levels are fairly consistent across the borough.
 
-### Chart C
-
+Plotly boxplot: 
+Boxplot of inspection scores by cuisine
 ```{r}
-
+ri_small |>
+mutate(cuisine = fct_reorder(cuisine, score, .fun = median, na.rm = TRUE)) |>
+plot_ly(y = ~score, color = ~cuisine, type = "box", colors = "viridis") |>
+layout(yaxis = list(title = "Inspection score (lower = better)"))
 ```
+This boxplot compares inspection score distributions across the top 12 cuisines in Manhattan.
+Lower median scores represent better sanitary conditions.
+Cuisines like Café/Coffee/Tea and American have relatively low medians and compact ranges — generally strong compliance.
+Meanwhile, Latin and Delicatessen cuisines show higher medians and wider spreads, implying more inconsistent cleanliness.
+Overall, different cuisines exhibit moderate variability, likely due to differences in restaurant size and preparation complexity.
+
+Plotly barchart: 
+Number of inspections by cuisine in our subset 
+```{r}
+ri_small |>
+count(cuisine) |>
+mutate(cuisine = fct_reorder(cuisine, n)) |>
+plot_ly(x = ~cuisine, y = ~n, color = ~cuisine, type = "bar", colors = "viridis") |>
+layout(xaxis = list(title = "Cuisine"),
+yaxis = list(title = "Number of inspections"))
+```
+This bar chart shows the frequency of inspections by cuisine type.
+Delicatessen, Café/Coffee/Tea, and Latin cuisines dominate the sample, reflecting their popularity in Manhattan.
+Less frequent categories like French and Bakery appear much smaller.
+This context is important when interpreting the boxplot: cuisines with few inspections may display greater variability simply due to limited data.
