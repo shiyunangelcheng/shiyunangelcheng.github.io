@@ -38,3 +38,4 @@ I’m a Columbia QMSS master’s student focused on **data science for social im
 - [GitHub](https://github.com/shiyunangelcheng)
 - [LinkedIn](https://www.linkedin.com/in/shiyun-angel-cheng/)
 - [Email](mailto:sc5558@columbia.edu)
+- [Dashboard for Problem 2](nyc_inspection_dashboard.html)

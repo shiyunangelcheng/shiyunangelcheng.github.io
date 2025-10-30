@@ -47,7 +47,7 @@ top_cuisines <- ri |>
 
 ri_small <- ri |> filter(cuisine %in% top_cuisines)
 ```
-Column {data-width=650}
+Column {data-width=400}
 -----------------------------------------------------------------------
 
 ### Chart A
@@ -69,7 +69,7 @@ layout(xaxis = list(title = "longitude"),
 yaxis = list(title = "latitude"))
 ``` 
 
-Column {data-width=350}
+Column {data-width=600}
 -----------------------------------------------------------------------
 
 ### Chart B
