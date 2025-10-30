@@ -1,0 +1,21 @@
+---
+title: "Shiyun's Resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+## Education
+- Columbia University — QMSS, Class of 2025
+- Brandeis University — Business and Economics, Class of 2024
+
+## Experience
+- United Nations EOSG — Partnerships & External Relations (Intern)
+- Capstone Project: Memorial Sloan Kettering Cancer Center (MSK) and Columbia, Data Analyst Core Team Member
+- Apple. Inc — Data Analyst Intern
+- Art Gallery — Data & Ops Intern
+ 
+## Skills
+R (tidyverse), Python (pandas, scikit-learn), SQL, Plotly, Git
