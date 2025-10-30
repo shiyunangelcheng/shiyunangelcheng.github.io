@@ -18,7 +18,7 @@ I’m a Columbia QMSS master’s student focused on **data science for social im
 - 📍 Based in Singapore / New York
 - 📧 Email: sc5558@columbia.edu
 - 💼 LinkedIn: https://www.linkedin.com/in/shiyun-angel-cheng/
-- 🧑‍💻 GitHub: https://github.com/<YOUR_GH_NAME>
+- 🧑‍💻 GitHub: https://github.com/shiyunangelcheng>
 
 ## What I do
 - **Analytics & Visualization:** Power BI, Tableau, Plotly; building KPI dashboards that inform funding, outreach, and growth.

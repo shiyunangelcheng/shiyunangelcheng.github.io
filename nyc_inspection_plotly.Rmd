@@ -4,7 +4,6 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-library(flexdashboard)
 library(tidyverse)
 library(p8105.datasets)
 library(plotly)

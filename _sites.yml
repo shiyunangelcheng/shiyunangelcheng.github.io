@@ -1,0 +1,18 @@
+name: "Shiyun Cheng — sc5558 P8105 Homework 4"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "Plotly Plots"
+      href: nyc_inspection_plotly.html
+    - text: "Dashboard"
+      href: nyc_inspection_dashboard.html
+    - icon: fa-envelope fa-lg
+      href: mailto:sc5558@columbia.edu
+    - icon: fa-github fa-lg
+      href: https://github.com/shiyunangelcheng
+output:
+  html_document:
+    theme: cosmo
+    toc: true
+    toc_float: true

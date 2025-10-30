@@ -9,25 +9,87 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+library(flexdashboard)
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+```
+load dataset and start making plots
+```{r}
+data(rest_inspec)
+
+ri <-
+  rest_inspec |>
+  mutate(
+    score = suppressWarnings(as.numeric(score)),
+    long  = as.numeric(longitude),
+    lat   = as.numeric(latitude)
+  ) |>
+  # ename cuisine_description to cuisine
+  rename(cuisine = cuisine_description) |>
+  select(
+    camis, dba, boro, cuisine, grade, score, lat, long, inspection_date
+  ) |>
+  filter(
+    !is.na(score),
+    !is.na(long), !is.na(lat),
+    long < -70, long > -75,   # keep within NYC bounds
+    lat  > 40, lat  < 41,
+    boro == "Manhattan",
+    score >= 0, score <= 40
+  )
+
+top_cuisines <- ri |>
+  count(cuisine, sort = TRUE) |>
+  slice_head(n = 12) |>
+  pull(cuisine)
+
+ri_small <- ri |> filter(cuisine %in% top_cuisines)
+```
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+ri_small |>
+mutate(text_label = str_c(
+dba, " — ", cuisine,
+"\nScore: ", score,
+ifelse(!is.na(grade), str_c(" (Grade ", grade, ")"), ""),
+"\nBorough: ", boro
+)) |>
+plot_ly(
+x = ~long, y = ~lat, type = "scatter", mode = "markers",
+color = ~score, colors = "viridis",
+text = ~text_label, alpha = 0.6
+) |>
+layout(xaxis = list(title = "longitude"),
+yaxis = list(title = "latitude"))
+``` 
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+ri_small |>
+mutate(cuisine = fct_reorder(cuisine, score, .fun = median, na.rm = TRUE)) |>
+plot_ly(y = ~score, color = ~cuisine, type = "box", colors = "viridis") |>
+layout(yaxis = list(title = "Inspection score (lower = better)"))
 ```
 
-## R Markdown
+### Chart C
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r}
+ri_small |>
+count(cuisine) |>
+mutate(cuisine = fct_reorder(cuisine, n)) |>
+plot_ly(x = ~cuisine, y = ~n, color = ~cuisine, type = "bar", colors = "viridis") |>
+layout(xaxis = list(title = "Cuisine"),
+yaxis = list(title = "Number of inspections"))
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
