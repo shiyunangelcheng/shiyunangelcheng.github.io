@@ -7,15 +7,66 @@ output:
     theme: cerulean
 ---
 
+# Shiyun (Angel) Cheng
+Singapore / New York • +1 (781) 873-6050 • sc5558@columbia.edu • [LinkedIn](https://www.linkedin.com/in/shiyun-angel-cheng/)
+
+---
+
 ## Education
-- Columbia University — QMSS, Class of 2025
-- Brandeis University — Business and Economics, Class of 2024
+**Columbia University** — M.A. in Quantitative Methods in the Social Sciences (Data Science Focus), **GPA: 4.0/4.0** *(Expected Feb 2026)*  
+Relevant coursework: Applied Data Science, Data Analysis, Machine Learning, Time Series, Panel Data, Forecasting
+
+**Brandeis University** — B.A. in Business & Economics; Minor in Art History & Mathematics, **GPA: 3.7/4.0** *(Feb 2021 – May 2024)*  
+Relevant coursework: Corporate Finance, Econometrics, Financial Economics, Marketing Analysis
+
+---
 
 ## Experience
-- United Nations EOSG — Partnerships & External Relations (Intern)
-- Capstone Project: Memorial Sloan Kettering Cancer Center (MSK) and Columbia, Data Analyst Core Team Member
-- Apple. Inc — Data Analyst Intern
-- Art Gallery — Data & Ops Intern
- 
+
+### United Nations — Executive Office of the Secretary-General (SPMU, External Relations & Partnerships)  
+**Data & Partnerships Intern** • New York, NY • *Jan 2025 – Jul 2025*  
+- **Donor & Partner Intelligence:** Researched **40+ donors** and **20+ partners**; produced concise, decision-oriented briefs that improved partner targeting.  
+- **BI Dashboards & Funding Analytics:** Built **Power BI** geo-dashboards and funding trackers covering **10 engagement metrics**; enabled data-driven outreach and pipeline monitoring.  
+- **Strategic Materials:** Co-developed pitch decks, proposals, and newsletters; efforts contributed to **$1M+** in support for priority initiatives.
+
+### Apple Inc. — China Online  
+**Product Intern (Data & Operations)** • Beijing, China • *Jul 2023 – Sept 2023*  
+- **Insights Pipeline:** Built an end-to-end cleaning + visualization workflow in **Excel / Tableau** to segment customers and track market trends.  
+- **Executive Dashboards:** Designed interactive views for **10+ sales KPIs**, improving reporting efficiency by ~**20%** and decision visibility.  
+- **Predictive Modeling:** Trained **Random Forest** and **XGBoost** models for category-level demand; boosted forecast accuracy by ~**10%**.  
+- **Stakeholder Coordination:** Unified campaign metrics across **Bytedance, JD, Taobao, Tmall** to streamline delivery and standardize performance reads.
+
+### Simplot Co., Limited  
+**Finance Assistant** • Hong Kong SAR • *Aug 2020 – Jan 2021*  
+- Reconciled supplier/customer accounts; processed reimbursements and sales orders; ensured VAT filings and reporting compliance.  
+- Coordinated batch payments and loan documentation; aligned inventory movements with accounting treatments; performed balance reconciliations.
+
+---
+
+## Projects
+
+### Memorial Sloan Kettering x Columbia — Cancer Survival Modeling (Capstone)  
+**Data Analyst (Core Member)** • New York, NY • *Jan 2025 – May 2025*  
+- **Data Integration & EDA:** Cleaned and joined multi-source clinical-genomic PDAC datasets; handled outliers, encoded categoricals, and normalized features.  
+- **Modeling:** Built **XGBoost** (classification / PR focus) and **DeepSurv** (survival); implemented cross-validation & hyperparameter tuning.  
+- **Results & Insights:** Achieved **0.85–0.92 PR** and **0.549 C-index**; key predictors included **KRAS mutation dosage**, **tumor purity**, and **treatment type**; generated interpretable insights to support potential treatment planning.
+
+*(Optional: add GitHub link or a redacted poster if available.)*
+
+---
+
 ## Skills
-R (tidyverse), Python (pandas, scikit-learn), SQL, Plotly, Git
+**Programming & Data:** Python (pandas, scikit-learn), R (tidyverse), SQL  
+**Analytics & Viz:** Power BI, Tableau, Plotly  
+**ML:** XGBoost, Random Forest, survival models (DeepSurv); cross-validation, feature engineering  
+**Tools:** Git/GitHub, Excel, Canva, PowerPoint  
+**Languages:** English, Chinese (bilingual)
+
+---
+
+## Contact
+- Email: sc5558@columbia.edu  
+- LinkedIn: https://www.linkedin.com/in/shiyun-angel-cheng/  
+- GitHub: https://github.com/shiyunangelcheng>
+
+Go back to the [homepage](index.html)

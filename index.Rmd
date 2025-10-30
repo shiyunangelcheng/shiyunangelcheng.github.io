@@ -7,14 +7,34 @@ output:
     theme: cerulean
 ---
 
-# Hi, I’m Shiyun 👋
+---
+title: "Shiyun (Angel) Cheng"
+---
 
-I’m a master’s student in Quantitative Methods in the Social Sciences at Columbia.  
-Interests: data science for social science, cultural economics, and ESG.
+# Hi — I’m Shiyun (Angel) 👋
 
-- 📧 Email: <sc5558@columbia.edu>
-- 💻 GitHub: https://github.com/shiyunangelcheng
-- 🔗 LinkedIn: https://www.linkedin.com/in/shiyun-angel-cheng/
+I’m a Columbia QMSS master’s student focused on **data science for social impact**, with hands-on experience in **BI dashboards**, **machine learning**, and **partnership analytics** across the **United Nations**, **Apple**, and art/cultural sectors.
 
-**Navigation**
+- 📍 Based in Singapore / New York
+- 📧 Email: sc5558@columbia.edu
+- 💼 LinkedIn: https://www.linkedin.com/in/shiyun-angel-cheng/
+- 🧑‍💻 GitHub: https://github.com/<YOUR_GH_NAME>
+
+## What I do
+- **Analytics & Visualization:** Power BI, Tableau, Plotly; building KPI dashboards that inform funding, outreach, and growth.
+- **Modeling & ML:** Python (pandas, scikit-learn, XGBoost), survival modeling (DeepSurv), and time-series/forecasting.
+- **Data Strategy:** From EDA and cleaning to feature engineering, stakeholder-ready insights, and reproducible workflows.
+
+## Highlights
+- **UN EOSG (SPMU, External Relations & Partnerships):** Built geo-dashboards and funding trackers; synthesized donor intelligence for 40+ donors and 20+ partners; supported pitch decks that helped **secure $1M+** for global priorities.
+- **Apple (China Online):** Designed interactive executive dashboards for **10+ sales KPIs**; unified campaign data across **Bytedance, JD, Taobao, Tmall**; improved forecast accuracy with **XGBoost / Random Forest**.
+- **MSKCC x Columbia Capstone:** Integrated clinical-genomic PDAC data; engineered features (KRAS dosage, tumor purity, treatment type); achieved **0.85–0.92 average precision (PR)** and **0.549 C-index** with XGBoost & DeepSurv.
+
+👉 **[View my Resume](resume.html)**  
+---
+
+### Site Navigation
 - [Resume](resume.html)
+- [GitHub](https://github.com/shiyunangelcheng)
+- [LinkedIn](https://www.linkedin.com/in/shiyun-angel-cheng/)
+- [Email](mailto:sc5558@columbia.edu)
